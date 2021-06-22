@@ -1,0 +1,6 @@
+from alpine
+run apk add --no-cache nodejs-current npm curl vim jq make unzip bash git
+run curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh | bash && \
+    echo "alias ll='ls -gAlF'" >> /root/.bash_aliases && \
+    echo "source /root/.bash_aliases" >> /root/.bashrc
+entrypoint ["/usr/bin/npm", "start"]
